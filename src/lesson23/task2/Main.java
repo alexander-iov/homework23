@@ -18,12 +18,17 @@ public class Main {
         Field[] declaredFields = object.getClass().getDeclaredFields();
         for (Field declaredField : declaredFields) {
             if (!declaredField.isAnnotationPresent(Ignore.class)) {
+                StringBuilder stringBuilder = new StringBuilder();
                 declaredField.setAccessible(true);
                 int modifiers = declaredField.getModifiers();
-                System.out.println(Modifier.toString(modifiers) + " " +
-                        declaredField.getType() + " " +
-                        declaredField.getName() + " " +
-                        declaredField.get(object));
+                stringBuilder.append(Modifier.toString(modifiers))
+                        .append("|")
+                        .append(declaredField.getType())
+                        .append("|")
+                        .append(declaredField.getName())
+                        .append("|")
+                        .append(declaredField.get(object));
+                System.out.println(stringBuilder.toString());
             }
         }
     }

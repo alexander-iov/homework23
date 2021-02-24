@@ -1,11 +1,10 @@
 package lesson23.task1;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
 
 public class Main {
-    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException {
+    public static void main(String[] args) throws  IllegalAccessException, NoSuchFieldException {
         String s = "Hello";
         System.out.println(s);
 
